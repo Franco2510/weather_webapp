@@ -100,9 +100,10 @@ body {
 
 .location-container {
     position: relative;
-    margin: 0 3em .5em;
+    margin: 0 auto .5em;
     box-sizing: border-box;
     z-index: 6;
+    max-width: 400px;
 }
 
 .autocomplete-input {
@@ -223,4 +224,22 @@ body {
 
 .city-background.cloudy-c {
     filter: saturate(50%);
+}
+
+/*--Special Cities----------------------------------------------------*/
+
+.city-background.sydney {
+    background: url('./images/sydney.png') no-repeat bottom, url('./images/city.png') repeat-x bottom center;
+}
+
+.city-background.night.sydney {
+    background: url('./images/sydney.png') no-repeat bottom, url('./images/city_night.png') repeat-x bottom center;
+}
+
+.city-background.paris {
+    background: url('./images/paris.png') no-repeat bottom, url('./images/city.png') repeat-x bottom center;
+}
+
+.city-background.night.paris {
+    background: url('./images/paris.png') no-repeat bottom, url('./images/city_night.png') repeat-x bottom center;
 }

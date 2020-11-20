@@ -54,14 +54,10 @@ class CityInput extends Component {
                                 const className = suggestion.active
                                     ? "suggestion-active"
                                     : "suggestion";
-                                const style = suggestion.active
-                                    ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                                    : { backgroundColor: '#fafafa', cursor: 'pointer' };
                                 return (
                                     <div
                                         {...getSuggestionItemProps(suggestion, {
-                                            className,
-                                            style
+                                            className
                                         })}
                                     >
                                         <span>{suggestion.description}</span>

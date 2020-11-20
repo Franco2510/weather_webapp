@@ -1,7 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
     font-family: Verdana, sans-serif;
+}
+
+.app-container {
+    position: relative;
+    margin: auto;
+    
+    min-width: 500px;
+
+    text-align: center;
+
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px black;
+
+    background-image: linear-gradient(rgb(0, 68, 255), rgb(210, 250, 255));
+    border-radius: 5px;
+}
+
+.app-container.day {
+    background-image: linear-gradient(rgb(0, 68, 255), rgb(210, 250, 255));
+}
+
+.app-container.night {
+    background-image: url('images/stars.png'), linear-gradient(rgb(25, 0, 82), rgb(161, 0, 153));
+    background-repeat: 'repeat';
+}
+
+.app-container.cloudy-c {
+    background-image: linear-gradient(rgb(74, 84, 110), rgb(212, 217, 236));
+}
+
+.app-container.cloudy-c.night {
+    background-image: linear-gradient(rgb(33, 41, 61), rgb(103, 75, 129));
+}
+
+.app-container-foreground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+
+.app-container-foreground.night {
+    filter: hue-rotate(80deg) saturate(6) brightness(70%);
+}
+
+.app-container-foreground.cloudy-a {
+    background-image: url('images/clouds_a.png');
+}
+
+.app-container-foreground.cloudy-b {
+    background-image: url('images/clouds_b.png');
+}
+
+.app-container-foreground.cloudy-c {
+    background-image: url('images/clouds_c.png');
+    filter: brightness(80%);
+}
+
+.app-container-foreground.rain-a {
+    background-image: url('images/rain_a.png');
+    filter: brightness(80%);
+}
+
+.app-container-foreground.rain-b {
+    background-image: url('images/rain_b.png');
+    filter: brightness(80%);
+}
+
+.app-container-foreground.storm {
+    background-image: url('images/storm.png');
+}
+
+.app-container-foreground.snow {
+    background-image: url('images/snow.png');
+}
+
+.app-container-foreground.mist {
+    background-image: url('images/mist.png');
+    background-size: cover;
+}
+
+.app-container-foreground.cloudy-c.night {
+    filter: hue-rotate(80deg) saturate(6) brightness(40%);
+}
+
+/*--Location Input-----------------------------------------------------------------*/
+
+.location-container {
+    position: relative;
+    margin: 0 3em .5em;
+    box-sizing: border-box;
+    z-index: 6;
+}
+
+.autocomplete-input {
+    margin-top: 1em;
+    width: 100%;
+    height: 2em;
+
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    letter-spacing: 4px;
+
+    
+    background-color: rgba(255, 255, 255, .5);
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(0, 0, 0, .5);
+}
+
+.autocomplete-input:hover {
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.autocomplete-input:focus {
+    background-color: rgba(255, 255, 255, .75);
+    font-weight: 500;
+    outline: none;
+}
+
+.autocomplete-dropdown {
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 2px 2px 5px black;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: black;
+    text-shadow: none;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.suggestion, .suggestion-active {
+    padding: 5px;
+}
+
+.suggestion-active {
+    background-color: rgb(79, 125, 163);
+    color: white;
+}
+
+.suggestion-active:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+/*--Weather Now----------------------------------------------------*/
+.weather-now-container {
+    position: relative;
+    z-index: 4;
+}
+
+.weather-icon {
+    display: inline-block;
+}
+
+.weather-description {
+    display: block;
+}
+
+.temp-value {
+    font-size: 6em;
+    text-shadow: 5px 5px black;
+}
+
+.temp-symbol {
+    position: relative;
+    vertical-align: top;
+    top: 1.5em;
+    font-size: 1.3em;
+    text-shadow: 3px 3px black;
+}
+
+.extra-data {
+    margin-bottom: 1em;
+}
+
+.extra-data span {
+    margin: 1em;
+}
+
+.humidity-icon {
+    margin: 5px;
+    position: relative;
+    top: 10px;
+}
+
+.date-time {
+    font-size: .8em;
+}
+
+/*--City Background----------------------------------------------------------------------*/
+
+.city-background {
+    position: relative;
+    background: url('./images/city.png') repeat-x bottom center;
+    padding-bottom: 400px;
+}
+
+.city-background.night {
+    background: url('./images/city_night.png') repeat-x bottom center;
+}
+
+.city-background.cloudy-c {
+    filter: saturate(50%);
 }

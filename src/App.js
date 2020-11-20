@@ -164,11 +164,7 @@ class App extends Component {
                 app.classList.add("cloudy-c");
                 city.classList.add("cloudy-c");
                 break;
-            }
-            default: {
-                this.removeWeatherClasses();
-            }
-        }
+            }asd
         //console.log("CITY!!", this.state.city);
         switch (this.state.city.toUpperCase()) {
             case "SYDNEY":

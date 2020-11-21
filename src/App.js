@@ -38,7 +38,7 @@ class App extends Component {
 
     getWeather = async (city) => {
         console.log(city);
-        const url = "http://api.openweathermap.org/data/2.5/weather?";
+        const url = "https://api.openweathermap.org/data/2.5/weather?";
         const key = "00643dce0eee944eb41d1db359bf2c55";
 
         const response = await fetch(`${url}q=${city}&appid=${key}&units=metric`);
